@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+/* ================= ROOT ================= */
+
 html {
   font-size: 62.5%;
 }
@@ -19,21 +21,29 @@ body {
   overflow-x: hidden;
 }
 
+/* ================= APP ================= */
+
 .app {
   min-height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+
+  grid-template-rows: auto auto 1fr auto;
 }
 
 /* ================= HEADER ================= */
 
 h1 {
   background-color: #f4a226;
+
   font-family: "Monoton", cursive;
+
   font-size: 3.6rem;
+
   text-align: center;
+
   padding: 2rem 1rem;
+
   letter-spacing: 2px;
   word-spacing: 5px;
 }
@@ -42,16 +52,20 @@ h1 {
 
 .add-form {
   background-color: #e5771f;
+
   padding: 2rem 1.5rem;
 
   display: flex;
   flex-direction: column;
+
   align-items: stretch;
-  gap: 1.2rem;
+
+  gap: 1.8rem;
 }
 
 .add-form h3 {
   text-align: center;
+
   font-size: 2rem;
 }
 
@@ -59,23 +73,32 @@ h1 {
 .add-form input,
 .add-form button {
   width: 100%;
+
   padding: 1.2rem;
+
   border: none;
+
   border-radius: 10rem;
+
   font-size: 1.6rem;
+
   font-family: inherit;
 }
 
 .add-form input,
 .add-form select {
   background-color: #ffebb3;
+
   color: #5a3e2b;
 }
 
 .add-form button {
   background-color: #76c7ad;
+
   font-weight: 700;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
@@ -86,59 +109,72 @@ h1 {
 /* ================= LIST ================= */
 
 .list {
-  flex: 1;
-
-  overflow-y: auto;
-
   background-color: #5a3e2b;
+
   color: #ffebb3;
 
   padding: 2rem 1.5rem;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 2rem;
+
+  overflow-y: auto;
 }
 
-/* ONLY THIS SCROLLS */
 .list ul {
   list-style: none;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 1.5rem;
 
   padding: 0;
+
   margin: 0;
 }
 
 .list li {
   background-color: rgba(255, 255, 255, 0.08);
+
   border-radius: 1rem;
-  padding: 1.2rem;
+
+  padding: 1.4rem;
 
   display: flex;
-  align-items: center;
-  gap: 1rem;
 
-  flex-wrap: wrap;
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
 }
 
 .list li span {
   flex: 1;
+
   word-break: break-word;
 }
 
 input[type="checkbox"] {
   width: 2rem;
+
   height: 2rem;
+
   accent-color: #e5771f;
 }
 
 .list li button {
   border: none;
+
   background: none;
+
   cursor: pointer;
+
   font-size: 2rem;
 }
 
@@ -146,16 +182,23 @@ input[type="checkbox"] {
 
 .actions {
   display: flex;
+
   justify-content: center;
 }
 
 .actions select {
   width: 100%;
+
   max-width: 300px;
+
   padding: 1rem;
+
   border: none;
+
   border-radius: 10rem;
+
   font-size: 1.5rem;
+
   background-color: #ffebb3;
 }
 
@@ -163,10 +206,15 @@ input[type="checkbox"] {
 
 .stats {
   background-color: #76c7ad;
+
   text-align: center;
+
   padding: 2rem 1rem;
+
   font-size: 1.6rem;
+
   font-weight: 700;
+  position: sticky;
 }
 
 /* ================= TABLET ================= */
@@ -174,18 +222,23 @@ input[type="checkbox"] {
 @media (min-width: 768px) {
   h1 {
     font-size: 6rem;
+
     padding: 2.5rem;
   }
 
   .add-form {
     flex-direction: row;
+
     justify-content: center;
+
     align-items: center;
+
     flex-wrap: wrap;
   }
 
   .add-form h3 {
     width: 100%;
+
     margin-bottom: 1rem;
   }
 
@@ -199,13 +252,83 @@ input[type="checkbox"] {
 
   .add-form button {
     width: auto;
+
     padding: 1.2rem 2.4rem;
   }
 
   .list ul {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 1.5rem;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 4.5rem;
+
+    padding: 2rem 1rem;
+  }
+
+  .add-form {
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 1.6rem;
+
+    padding: 2rem 1.5rem;
+  }
+
+  .add-form h3 {
+    width: 100%;
+
+    font-size: 2rem;
+
+    text-align: center;
+  }
+
+  .add-form select,
+  .add-form input,
+  .add-form button {
+    width: 100%;
+
+    font-size: 1.8rem;
+
+    padding: 1.4rem;
+  }
+
+  .list ul {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+  }
+
+  .list li {
+    font-size: 1.7rem;
+
+    padding: 1.4rem;
+  }
+
+  .actions select {
+    width: 100%;
+
+    font-size: 1.6rem;
+  }
+
+  .stats {
+    font-size: 1.7rem;
+
+    padding: 2rem 1rem;
   }
 }
 
@@ -225,48 +348,56 @@ input[type="checkbox"] {
   }
 }
 
+/* ================= MOBILE ================= */
+
 @media (max-width: 480px) {
   html {
-    font-size: 110%;
+    font-size: 90%;
   }
 
   h1 {
-    font-size: 6rem;
-    padding: 2.5rem 1rem;
+    font-size: 4.5rem;
+
+    padding: 2rem 1rem;
   }
 
   .add-form h3 {
-    font-size: 2.6rem;
+    font-size: 2rem;
+  }
+
+  .add-form input {
+    min-width: 160px;
   }
 
   .add-form input,
   .add-form select,
   .add-form button {
-    font-size: 2.2rem;
-    padding: 1.6rem;
-  }
-
-  .list li {
-    font-size: 2rem;
-    padding: 1.8rem;
-  }
-
-  input[type="checkbox"] {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-
-  .list li button {
-    font-size: 3rem;
-  }
-
-  .actions select {
     font-size: 1.8rem;
+
     padding: 1.4rem;
   }
 
+  .list li {
+    font-size: 1.7rem;
+  }
+
+  input[type="checkbox"] {
+    width: 2.4rem;
+
+    height: 2.4rem;
+  }
+
+  .list li button {
+    font-size: 2.4rem;
+  }
+
+  .actions select {
+    font-size: 1.6rem;
+  }
+
   .stats {
-    font-size: 2rem;
-    padding: 2.4rem 1rem;
+    font-size: 1.7rem;
+
+    padding: 2rem 1rem;
   }
 }
