@@ -18,11 +18,11 @@ body {
 }
 
 .app {
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
+  overflow: hidden;
 }
-
 
 h1 {
   background-color: #f4a226;
@@ -82,11 +82,15 @@ h1 {
 .list {
   background-color: #5a3e2b;
   color: #ffebb3;
+
   padding: 2rem 1.5rem;
 
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .list ul {
@@ -150,7 +154,6 @@ input[type="checkbox"] {
   font-size: 1.6rem;
   font-weight: 700;
 }
-
 
 @media (min-width: 768px) {
   h1 {
