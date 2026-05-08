@@ -6,14 +6,6 @@
   box-sizing: border-box;
 }
 
-/* IMPORTANT FIX */
-html,
-body,
-#root {
-  height: 100%;
-  overflow: hidden;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -23,12 +15,15 @@ body {
   font-size: 1.6rem;
   color: #5a3e2b;
   background-color: #fefaf5;
+
+  overflow-x: hidden;
 }
 
 .app {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* ================= HEADER ================= */
@@ -91,18 +86,18 @@ h1 {
 /* ================= LIST ================= */
 
 .list {
+  flex: 1;
+
+  overflow-y: auto;
+
   background-color: #5a3e2b;
   color: #ffebb3;
 
   padding: 2rem 1.5rem;
 
-  overflow-y: auto;
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
-  min-height: 0;
 }
 
 /* ONLY THIS SCROLLS */
@@ -172,9 +167,6 @@ input[type="checkbox"] {
   padding: 2rem 1rem;
   font-size: 1.6rem;
   font-weight: 700;
-
-  position: sticky;
-  bottom: 0;
 }
 
 /* ================= TABLET ================= */
