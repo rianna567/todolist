@@ -20,8 +20,8 @@ export default function App() {
   function handleToggleItem(id) {
     setItems((items) =>
       items.map((item) =>
-        item.id === id ? { ...item, packed: !item.packed } : item,
-      ),
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
     );
   }
 
@@ -40,7 +40,7 @@ export default function App() {
 }
 
 function Logo() {
-  return <h1>ToDo</h1>;
+  return <h1>🌴Far Away</h1>;
 }
 
 function Form({ onAddItem }) {
@@ -67,7 +67,7 @@ function Form({ onAddItem }) {
 
   return (
     <form className="add-form" onSubmit={handleSubmit}>
-      <h3>What do you need to do? 🤔</h3>
+      <h3>What do you need for your trip? 🤔</h3>
 
       <select
         value={quantity}
@@ -110,10 +110,14 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
       .sort((a, b) => Number(a.packed) - Number(b.packed));
 
   if (sortBy === "quantity-asc")
-    sortedItems = items.slice().sort((a, b) => a.quantity - b.quantity);
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.quantity - b.quantity);
 
   if (sortBy === "quantity-desc")
-    sortedItems = items.slice().sort((a, b) => b.quantity - a.quantity);
+    sortedItems = items
+      .slice()
+      .sort((a, b) => b.quantity - a.quantity);
 
   return (
     <div className="list">
@@ -150,7 +154,11 @@ function Item({ item, onDeleteItem, onToggleItem }) {
         onChange={() => onToggleItem(item.id)}
       />
 
-      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+      <span
+        style={
+          item.packed ? { textDecoration: "line-through" } : {}
+        }
+      >
         {item.quantity} {item.description}
       </span>
 
