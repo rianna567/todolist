@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+/* IMPORTANT FIX */
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -18,11 +26,12 @@ body {
 }
 
 .app {
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  overflow: hidden;
 }
+
+/* ================= HEADER ================= */
 
 h1 {
   background-color: #f4a226;
@@ -34,6 +43,7 @@ h1 {
   word-spacing: 5px;
 }
 
+/* ================= FORM ================= */
 
 .add-form {
   background-color: #e5771f;
@@ -78,6 +88,7 @@ h1 {
   transform: scale(1.02);
 }
 
+/* ================= LIST ================= */
 
 .list {
   background-color: #5a3e2b;
@@ -85,20 +96,25 @@ h1 {
 
   padding: 2rem 1.5rem;
 
+  overflow-y: auto;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
-  overflow-y: auto;
   min-height: 0;
 }
 
+/* ONLY THIS SCROLLS */
 .list ul {
   list-style: none;
 
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  padding: 0;
+  margin: 0;
 }
 
 .list li {
@@ -109,6 +125,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 1rem;
+
   flex-wrap: wrap;
 }
 
@@ -130,6 +147,7 @@ input[type="checkbox"] {
   font-size: 2rem;
 }
 
+/* ================= ACTIONS ================= */
 
 .actions {
   display: flex;
@@ -146,6 +164,7 @@ input[type="checkbox"] {
   background-color: #ffebb3;
 }
 
+/* ================= FOOTER ================= */
 
 .stats {
   background-color: #76c7ad;
@@ -153,7 +172,12 @@ input[type="checkbox"] {
   padding: 2rem 1rem;
   font-size: 1.6rem;
   font-weight: 700;
+
+  position: sticky;
+  bottom: 0;
 }
+
+/* ================= TABLET ================= */
 
 @media (min-width: 768px) {
   h1 {
@@ -193,6 +217,7 @@ input[type="checkbox"] {
   }
 }
 
+/* ================= DESKTOP ================= */
 
 @media (min-width: 1024px) {
   .list ul {
