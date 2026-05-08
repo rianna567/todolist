@@ -232,3 +232,42 @@ input[type="checkbox"] {
     font-size: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  html {
+    font-size: 85%;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .add-form h3 {
+    font-size: 2.4rem;
+  }
+
+  .add-form input,
+  .add-form select,
+  .add-form button {
+    font-size: 2rem;
+    padding: 1.4rem;
+  }
+
+  .list li {
+    font-size: 1.8rem;
+    padding: 1.6rem;
+  }
+
+  input[type="checkbox"] {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .list li button {
+    font-size: 2.6rem;
+  }
+
+  .stats {
+    font-size: 1.8rem;
+  }
+}
